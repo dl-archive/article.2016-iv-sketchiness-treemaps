@@ -1,0 +1,43 @@
+
+\section{Related Work}
+\label{sec:related}
+
+\noindent
+Related work includes findings in the fields of visualization of tree-structured and hierarchical data, non-photorealistic rendering (NPR), human perception, map design, and cartographic information display. 
+
+Since the original presentation of Johnsons and Shneiderman's 2D treemaps \cite{Johnson1991} 
+various treemap layouts have been investigated, 
+improving layout readability, stability, and the graphical elements' aspect ratio \cite{Bruls1999,Bederson2002}.
+2.5D treemaps utilize the third dimension for additional information display based on the Cityscape metaphor  \cite{Keskin1997} by transforming rectangular elements into stacked 3D blocks.  
+Our GPU-based implementation follows the  real-time rendering approach for 3D treemaps described in \cite	{Trapp2013} that can efficiently process large amounts of tree data. 
+
+Sketchy rendering is often based on perturbing outlines (\eg silhouettes) and modifying textures (\eg hatches, strokes) in a sketchy way \cite{Strothotte2002}.
+For example, if we map uncertainty values to edges, drawn in  image space \cite{Nienhaus2004}, we get sketchy outlines causing a kind of \enquote{shower door} effect. 
+Alternatively, overlapping, edge-aligned and textured billboards can be placed in object space, 
+enabling image-space independent sketchiness \cite{Doellner2003}.
+In this case, efficient and accurate line visibility can be achieved by GPU-based hidden line removal \cite{Cole2009}.
+In this work, we follow the object-based approach for sketchy rendering. 
+To draw textures in a sketchy style, we can hatch strokes over surfaces, \eg via precomputed \cite{Praun2001,Webb2002} or recursive procedural Tonal Art Maps \cite{Szecsi2014}. 
+For hatching, a GPU-based, dynamic principal direction propagation emphasizes surface orientation \cite{Kim2008} but does not significantly contribute to sketchiness of blocks in 2.5D treemaps due to their simple, regular shape. 
+Most computer generated NPR styles come close to hand-drawn ones and seem to be preferred by users \cite{Cole2008, Isenberg2006}.
+
+Sketchiness in general allows us to influence how people read and understand depicted information \cite{Isenberg2013}.
+Wood \etal \cite{Wood2012} investigate sketchy rendering for information visualization and proposes a corresponding framework; we extend this work for the specific application of sketchiness in 2.5D treemaps. 
+In particular, sketchiness can intentionally facilitate communication \cite{Walny2011} or 
+reduce the expected amount of cognitive processing due to its supposed simplicity \cite{Wood2012}.
+It conveys visual imprecision, decreases people's confidence in the underlying data quality and encourages constructive feedback, discussion, and participation \cite{Zanola2009,Luboschik2010} as well as supports interactive exploration \cite{Greenberg2011, Browne2011}.
+
+In cartographic information display \cite{Bertin1983} 
+and information visualization,
+visual variables  provide a theoretical background for designing and understanding visual mappings \cite{Skupin2000}.
+Each visual variable (\eg size, shape, color, texture) can be used to map one of the underlying multi-dimensional data 
+but its choice depends on the variable's characteristics including
+selective, associative, quantitative, length, and order properties \cite{Carpendale2003}, which significantly have impact on perception and understanding of the presented information. 
+
+Sketchiness can be viewed as visual variable 
+that alters the way other visual variables are rendered, 
+\ie it perturbes their visual mappings.
+In particular, sketchiness appears to \enquote{have the capacity to carry information in its own right} \cite{Wood2012} 
+and allows us to map any ratio-scale data, while being most effective for ordinal data. 
+For example, to depict uncertainty, Boukhelifa \etal \cite{Boukhelifa2012} propose to use only 3 to 4 discrete line styles.
+

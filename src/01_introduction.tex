@@ -1,0 +1,46 @@
+
+\section{Introduction}
+\label{sec:introduction}
+
+\noindent
+Treemaps provide mappings of tree-structured, hierarchical data by means of a space-constrained, recursively nested sets of rectangles that express the parent-child relationship among nodes and whose sizes are proportional to some computed per-node weights \cite{Shneiderman2009}.
+Data associated with nodes, here referred to as \textit{attributes}, can be mapped by means of the 
+\textit{visual variables} of treemaps, \eg size, color, texture, and shading \cite{Carpendale2003}.
+
+\textit{2.5D treemaps} extend treemaps by using the third dimension to extrude rectangles to \textit{blocks} while still having the regular treemap's two-dimensional reference space and layout. 
+Technically they are represented as interactive 3D models and often ambiguously denoted by \textit{3D treemaps}. 
+On the one hand, blocks facilitate emphasizing the hierarchical nesting of inner nodes and offer size and color as principal visual variables. 
+On the other hand, blocks also provide another strong visual variable, namely height, 
+which, in consequence, allows us to independently map three attributes (size, color, height) 
+and to visually relate these attributes in a single 2.5D treemap view. 
+
+Many 2D and 2.5D treemap variants are applied in a growing number of applications and systems to visualize multivariate, large tree-structured data of, \eg 
+file systems \cite{Shneiderman1992}, 
+software systems \cite{Wettel2008}, 
+business data \cite{Vliegen2006}, 
+stock markets \cite{Wattenberg1999}, or 
+controller performance data \cite{Mitchell2004}.
+For example, visual software analytics tools build software maps based on 2.5D treemaps 
+to provide insight into large software artifact hierarchies and their characteristics 
+by relating code modules (nodes) with associated data about 
+code metrics, software quality, development activity as well as budget and resource planning \cite{Bohnet2011}.
+
+As Wood et al. \cite{Wood2012} points out, \textit{sketchiness} 
+\enquote{offers different ways of communicating ideas of narrative, purpose, ownership, accuracy and aesthetic} 
+and it \enquote{may be reliably used as a visual variable on an ordinal scale, but that caution should be exercised when representing interval or ratio scale data}.
+Uncertainty, imprecision, or vagueness data, 
+mostly represented by \textit{ordinal variables with small range}, 
+can be found in many treemap application scenarios.
+Of course, this kind of attribute data can be mapped to common visual variables. 
+However, if we depict this data by means of sketchiness, 
+which provides a fourth `strong' visual variable for 2.5D treemaps, 
+we thereby retain the other visual variables.
+Sketchiness also allows us to qualify attribute mappings 
+by mapping uncertainty in a generally understandable way. 
+For example, in software maps we could superimpose the attribute `test coverage' (sketchiness) to the mappings of lines-of-code (size), software complexity (height) and frequency of changes (color) to emphasize those modules that are difficult to comprehend, have been significantly altered recently \textit{and} that are rarely tested. 
+This paper provides the following contributions:
+\begin{enumerate}[leftmargin=16pt]
+	\item We discuss a design space of sketchiness for 2.5D treemaps \wrt rendering of sketchy outlines and surfaces, which is explained in detail for three distinct styles: Biro, (colored) Pencil, and Marker. %
+	\item We evaluate sketchiness in terms of a visual 2.5D treemap variable and discuss its selective, associative, quantitative, as well as order and length characteristics.
+\end{enumerate}
+

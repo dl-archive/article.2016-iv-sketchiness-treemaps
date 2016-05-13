@@ -1,0 +1,145 @@
+% -----------------------------------------------------
+% By Jonathan C. Roberts
+% File modified: 15.01.2003 - nb29
+% -----------------------------------------------------
+\documentclass[twocolumn]{article}
+
+ \usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{lipsum}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{csquotes}
+\usepackage[hidelinks,draft]{hyperref}
+\usepackage[]{units}
+
+\graphicspath{{figures/}}
+\DeclareGraphicsExtensions{.pdf,.png}
+
+%set dimensions of columns, gap between columns, and paragraph indent
+\setlength{\textheight}{8.75in}
+\setlength{\columnsep}{2.0pc}
+\setlength{\textwidth}{6.8in}
+%\setlength{\footheight}{0.0in}
+\setlength{\topmargin}{0.25in}
+\setlength{\headheight}{0.0in}
+\setlength{\headsep}{0.0in}
+\setlength{\oddsidemargin}{-.19in}
+\setlength{\parindent}{1pc}
+
+\setlength{\parskip}{0.25pc} % very ugly without it... (DL)
+
+\makeatletter
+%to get 12 point spacing for normalsize text, must set it to 10 points
+\def\@normalsize{\@setsize\normalsize{10pt}\xpt\@xpt
+\abovedisplayskip 10pt plus2pt minus5pt\belowdisplayskip
+\abovedisplayskip \abovedisplayshortskip \z@
+plus3pt\belowdisplayshortskip 6pt plus3pt
+minus3pt\let\@listi\@listI}
+
+%need an 10 pt font size for subsection and abstract headings
+\def\subsize{\@setsize\subsize{10pt}\xipt\@xipt}
+
+%make section titles bold and 12 point, 2 blank lines before, 1 after
+\def\section{\@startsection {section}{1}{\z@}{1.0ex plus
+1ex minus .2ex}{.2ex plus .2ex}{\large\bf}}
+
+%make subsection titles bold and 11 point, 1 blank line before, 1 after
+\def\subsection{\@startsection {subsection}{2}{\z@}{1.2ex
+plus 1ex}{.2ex plus .2ex}{\subsize\bf}}
+
+\def\keywords{\vspace{.6em}
+    \if@twocolumn
+	\small{\itshape Keywords\/}\bfseries---$\!$%
+    \else
+	\small{\itshape Keywords\/}\bfseries---$\!$%\end{center}\quotation\small
+      %\begin{center}\small\bfseries Keywords\end{center}\quotation\small
+    \fi}
+\def\endkeywords{\vspace{0.6em}\par\if@twocolumn\else\endquotation\fi
+    \normalsize\rm}
+    
+\usepackage{ifthen}
+\newboolean{blinded}
+\setboolean{blinded}{false}
+
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\figureautorefname}{Fig.}
+
+\newcommand*{\eg}[1]{{e.g.}, #1}
+\newcommand*{\Eg}[1]{{E.g.}, #1}
+\newcommand*{\ie}[1]{{i.e.}, #1}
+\newcommand*{\ia}[1]{{inter~alia}, #1}
+\newcommand*{\etal}{{et~al.} }	
+\newcommand*{\wrt}{{with respect to} } %w.r.t.
+
+\newcommand{\pprelim}[1]{\color[rgb]{0.08,0.32,0.64}#1}
+\newcommand{\ptodo}[1]{\color[rgb]{0.64,0.08,0.32}#1}
+
+% custom teaser command \teaser{imagefile}{cpation}
+\newcommand{\teaser}[2]{
+	\newcommand{\@teasergraphics}{#1}
+	\newcommand{\@teasercaption}{#2}}
+
+\newcommand\titlefig{%
+	\\[\normalbaselineskip]\hspace{-9pt}
+	\begin{minipage}[t]{\linewidth}
+		\includegraphics[width=\linewidth]{\@teasergraphics}\\
+		\refstepcounter{figure}\normalsize{Figure~\thefigure: \@teasercaption}
+		\label{fig:teaser}
+	\end{minipage}}
+
+\makeatletter
+\patchcmd\@maketitle{\LARGE\@title}{\Large\textbf{\@title}}{}{}
+\patchcmd\@maketitle{\@author}{\@author\titlefig}{}{}
+\makeatother
+
+\begin{document}
+
+\title{Evaluation of Sketchiness as a Visual Variable for 2.5D Treemaps}
+
+\author{\ifthenelse{\boolean{blinded}}%
+	% blinded
+	{Contribution ID: 165\footnote{email.blinded@for-review.com, \{email.schema@also-blinded.com\}}\\} 
+	% not blinded
+	{Daniel Limberger\footnote{daniel.limberger@hpi.de, \{firstname.lastname@hpi.de\}},
+	Carolin Fiedler,
+	Sebastian Hahn,
+	Matthias Trapp and
+	J\"{u}rgen D\"{o}llner
+	\\
+	Hasso Plattner Institute, University of Potsdam, Germany}}
+
+\teaser{teaser2}{A 2.5D treemap using sketchiness to depict uncertainty for each leaf node of the treemap (left). Variations of sketchy rendering styles for 2.5D treemap blocks patterns (top) and example blocks (bottom).}
+
+\date{}
+
+\maketitle
+
+\input{00_abstract}
+
+\begin{keywords}
+Treemap, Sketchiness, Visual Variable, Uncertainty, Visual Analytics, Real-time Rendering%
+\end{keywords}
+
+\input{01_introduction}
+\input{02_relatedwork}
+\input{03_sketchyrendering}
+\input{04_userevaluation}
+\input{06_conclusion}
+
+% The preferred spelling of the word “acknowledgment” in America is without an “e” after the “g”
+\section*{Acknowledgment}
+
+\noindent
+This work was funded by the Federal Ministry of Education and Research (BMBF), Germany, within the InnoProfile Transfer research group \enquote{4DnD-Vis} (\url{www.4dndvis.de}).
+
+\bibliographystyle{plain}
+{
+\small
+\bibliography{references}
+}
+\end{document}
