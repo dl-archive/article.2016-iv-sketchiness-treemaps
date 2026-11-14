@@ -4,7 +4,7 @@
 
 *20th International Conference Information Visualisation (IV '16)*, July 19–22, 2016, Lisbon, Portugal. IEEE, pp. 183–189.
 
-[![Version of record: 10.1109/IV.2016.61](https://img.shields.io/badge/Version_of_record-10.1109%2FIV.2016.61-007ec6)](https://doi.org/10.1109/IV.2016.61) [![ResearchGate](https://img.shields.io/badge/ResearchGate-publication-00CCBB?logo=researchgate&logoColor=white)](https://www.researchgate.net/publication/301682636)
+[![Version of record: 10.1109/IV.2016.61](https://img.shields.io/badge/Version_of_record-10.1109%2FIV.2016.61-007ec6)](https://doi.org/10.1109/IV.2016.61) [![Author's version: 10.5281/zenodo.24220782](https://img.shields.io/badge/Author%27s_version-10.5281%2Fzenodo.24220782-007ec6)](https://doi.org/10.5281/zenodo.24220782) [![ResearchGate](https://img.shields.io/badge/ResearchGate-publication-00CCBB?logo=researchgate&logoColor=white)](https://www.researchgate.net/publication/301682636)
 
 > Treemaps serve as generic, effective tools to display, explore, and analyze multi-variate tree data in a scalable, interactive, and consistent way.
 > In this paper, we discuss and evaluate sketchiness as visual variable of 2.5D treemaps.
