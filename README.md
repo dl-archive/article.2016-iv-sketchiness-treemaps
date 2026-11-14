@@ -34,6 +34,16 @@ The only difference is the "View publication stats" footer that ResearchGate add
 ## Versions
 
 - [`v1.0-camera-ready`](https://github.com/dl-archive/article.2016-iv-sketchiness-treemaps/tree/v1.0-camera-ready) – sources as submitted to IEEE
+- [`v1.1-revised`](https://github.com/dl-archive/article.2016-iv-sketchiness-treemaps/tree/v1.1-revised) – author's revised version (2026-11-14): spelling, grammar and hyphenation fixes, see [Revisions](#revisions)
+
+## Revisions
+
+`v1.1-revised` (2026-11-14) corrects errors in the camera-ready version without changing its content or layout (same page and column breaks).
+Every page carries the note "Author's revised version (2026-11-14). Version of record: https://doi.org/10.1109/IV.2016.61".
+
+- Spelling: "perturbs" (was "perturbes"), "being", "noticeable", "leaves" (was "leafs"), "lowered" (was "lowever"), "unacceptable", "Johnson and Shneiderman's", "2.5D treemaps" (was "2.5 treemaps").
+- Grammar and word choice: "a corresponding implementation", "by means of space-constrained, recursively nested sets", "point out", "propose", "significantly impact", "the components of a 2.5D treemap", "influenced by shaking", "the visualization's aesthetics", "linearly filtered", "the blocks' distinct appearance", "sparsely hatched", "maximally sketchy", "participants were asked", "the point of view's angle", "the number of estimations was", "distinct from", "at 120 Hz", "within-subjects", "listed in", "the participants' ability", "of whom", "fully sketchy", "The number of images shown was", "For each set, a score", "correctly answered", "as an independent visual variable", "having an impact", "into an order", "in its own right", "could look like", and missing commas.
+- Hyphenation and typography: computer-generated, procedurally generated, distance-transformed, $\log_2$, "Biro style".
 
 ## Citation
 
